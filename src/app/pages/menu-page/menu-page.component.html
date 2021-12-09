@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row"></div>
+  <div class="row my-3">
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 *ngIf="menu.id > 0" class="mb-3">Edit Menu</h4>
+        <h4 *ngIf="menu.id <= 0" class="mb-3">Create Menu</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+
+            <div class="col-12">
+              <label for="name" class="form-label">Name</label>
+              <input name="name"  [(ngModel)]="menu.name" type="text" class="form-control" id="name" placeholder="Name"
+                     required="">
+              <div class="invalid-feedback">
+                Please enter name.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Description</label>
+              <input [(ngModel)]="menu.description" name="address" type="text" class="form-control" id="address"
+                     placeholder="1234 Main St" required="">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="typeMenu" class="form-label">Type menu</label>
+            <select name="type" [(ngModel)]="menu.typeMenu.id" class="form-select custom-select" id="typeMenu" required="">
+              <option class="form-control" disabled selected>Select type menu</option>
+              <option *ngFor="let typeMenu of typeMenus" class="form-control"
+                      value="{{typeMenu.id}}">{{typeMenu.name}}</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label for="restaurant" class="form-label">Restaurant</label>
+            <select name="restaurant" [(ngModel)]="menu.restaurant.id" class="form-select custom-select" id="restaurant" required="">
+              <option class="form-control" disabled selected>Select restaurant</option>
+              <option *ngFor="let restaurant of restaurants" class="form-control"
+                      value="{{restaurant.id}}">{{restaurant.name}}</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button (click)="save()" class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+          <button *ngIf="menu.id > 0" (click)="delete()" class="w-100 btn btn-danger btn-lg mt-3" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>

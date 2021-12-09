@@ -1,0 +1,33 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
+
+{
+        "id": 1,
+        "name": "Блюдо 1",
+        "ingredients": "Свекла, Морковь",
+        "ves": "200g",
+        "price": "400$",
+        "menu": {
+            "id": 1,
+            "name": "Название 1",
+            "typeMenu": {
+                "id": 1,
+                "name": "Итальянская кухня"
+            },
+            "description": "Классное меню",
+            "restaurant": {
+                "id": -1,
+                "name": "",
+                "address": ""
+            }
+        },
+        "typeDish": {
+                            "id": 1,
+                            "name": "Type 1",
+                            "description": "Samara 1"
+                        }
+    }
+
+

@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
+
+[
+    {
+        "id": 1,
+        "name": "Restaurant 1",
+        "address": "Samara 1"
+    },
+    {
+        "id": 2,
+        "name": "Restaurant 2",
+        "address": "Samara 2"
+    },
+    {
+        "id": 3,
+        "name": "Restaurant 3",
+        "address": "Samara 3"
+    },
+    {
+        "id": 4,
+        "name": "Restaurant 4",
+        "address": "Samara 4"
+    }
+]
+

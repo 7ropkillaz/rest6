@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row mt-4 justify-content-between">
+    <h2 class="h2">
+      Рестораны
+    </h2>
+    <button *ngIf="isAuthorize" onClick="window.location.href='/restaurant'"
+            class="btn btn-outline-primary me-2">
+      Create restaurant
+    </button>
+  </div>
+  <div class="row mt-5">
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Адрес</th>
+        <th *ngIf="isAuthorize" scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let restaurant of restaurants; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <a href="/restaurant/{{restaurant.id}}/menus">{{restaurant.name}}</a>
+        </td>
+        <td>{{ restaurant.address}}</td>
+        <td *ngIf="isAuthorize">
+          <button (click)="editRestaurant(restaurant.id)"
+                  class="btn btn-outline-primary me-2">Edit
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

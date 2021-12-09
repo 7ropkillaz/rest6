@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row"></div>
+  <div class="row my-3">
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+
+        <h4 *ngIf="restaurant.id > 0" class="mb-3">Edit restaurant</h4>
+        <h4 *ngIf="restaurant.id == 0" class="mb-3">Create restaurant</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+
+            <div class="col-12">
+              <label for="address" class="form-label">Name</label>
+              <input [(ngModel)]="restaurant.name" name="name" type="text" class="form-control" id="name" placeholder="Name" required="">
+              <div class="invalid-feedback">
+                Please enter name.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input [(ngModel)]="restaurant.address" name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button (click)="save()" class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+          <button *ngIf="restaurant.id > 0" (click)="delete()" class="w-100 btn btn-danger btn-lg mt-3" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>

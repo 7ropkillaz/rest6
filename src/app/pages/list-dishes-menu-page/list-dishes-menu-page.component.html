@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row mt-4 justify-content-between">
+    <h2 class="h2">
+      Меню {{menu.name}}:
+    </h2>
+    <button *ngIf="isAuthorize" onClick="window.location.href='/dish'"
+            class="btn btn-outline-primary me-2">
+      Create dish
+    </button>
+  </div>
+  <div class="row mt-5">
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Ингридиенты</th>
+        <th scope="col">Вес</th>
+        <th scope="col">Цена</th>
+        <th *ngIf="isAuthorize" scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let dish of dishes; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{dish.name}}
+        </td>
+        <td>{{dish.ingredients}}</td>
+        <td>{{dish.ves}}</td>
+        <td>{{dish.price}}</td>
+        <td *ngIf="isAuthorize">
+          <button (click)="editDish(dish.id)"
+                  class="btn btn-outline-primary me-2">Edit
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

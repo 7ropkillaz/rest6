@@ -1,0 +1,45 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
+
+[
+    {
+        "id": 1,
+        "name": "Название 1",
+        "typeMenu": {
+            "id": 1,
+            "name": "Итальянская кухня"
+        },
+        "description": "Классное меню"
+    },
+    {
+        "id": 2,
+        "name": "Название 2",
+        "typeMenu": {
+            "id": 1,
+            "name": "Итальянская кухня"
+        },
+        "description": "Классное меню2"
+    },
+    {
+        "id": 3,
+        "name": "Название 3",
+        "typeMenu": {
+            "id": 2,
+            "name": "Русская кухня"
+        },
+        "description": "Классное меню3"
+    },
+    {
+        "id": 4,
+        "name": "Название 4",
+        "typeMenu": {
+            "id": 2,
+            "name": "Русская кухня"
+        },
+        "description": "Классное меню4"
+    }
+]
+
+
